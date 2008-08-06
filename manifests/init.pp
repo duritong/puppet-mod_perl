@@ -22,4 +22,7 @@ class mod_perl::gentoo inherits mod_perl::base {
     }
 }
 
+define mod_perl::module () {
+    package { "${name}": ensure => installed }
+}
 

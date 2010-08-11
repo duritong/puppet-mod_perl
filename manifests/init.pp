@@ -12,6 +12,7 @@
 class mod_perl {
     case $operatingsystem {
         gentoo: { include mod_perl::gentoo }
+        centos: { include mod_perl::centos }
         default: { include mod_perl::base }
     }
 }

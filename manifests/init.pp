@@ -15,18 +15,3 @@ class mod_perl {
         default: { include mod_perl::base }
     }
 }
-
-class mod_perl::base {
-    include apache
-    package{mod_perl:
-        ensure => installed,
-        require => Package['apache'],
-        notify => Service['apache'],
-    }
-}
-
-class mod_perl::gentoo inherits mod_perl::base {
-    Package[mod_perl]{
-        category => 'www-apache',
-    }
-}
